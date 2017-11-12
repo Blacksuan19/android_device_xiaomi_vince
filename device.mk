@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
     init.goodix.sh \
     init.recovery.qcom.rc \
     init.recovery.qcom.usb.rc \
-    init.vince.rc
+    init.vince.rc \
+    init.safailnet.rc \
 
 # Sensors
 PRODUCT_COPY_FILES += \
