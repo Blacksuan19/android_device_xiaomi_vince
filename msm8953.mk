@@ -331,7 +331,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
-# VNDK
+# VNDK-SP:
 PRODUCT_PACKAGES += \
     vndk-sp
 
