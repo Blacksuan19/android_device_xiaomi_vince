@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The Android Open Source Project
-                   2015-2016 The CyanogenMod Project
+<!--
+     Copyright (C) 2012 The Android Open Source Project
+               (C) 2015 The CyanogenMod Project
+               (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,10 +20,24 @@
 <!-- Camera app resources that may need to be customized
      for different hardware or product builds. -->
 <resources>
-    <!-- Opens back camera using openLegacy() and forces api v1 -->
-    <bool name="back_camera_open_legacy">true</bool>
+    <!-- Opens back camera using openLegacy() -->
+    <bool name="back_camera_open_legacy">false</bool>
 
-    <!-- Opens front camera using openLegacy() and forces api v1 -->
-    <bool name="front_camera_open_legacy">true</bool>
+    <!-- Opens front camera using openLegacy() -->
+    <bool name="front_camera_open_legacy">false</bool>
+
+    <!-- Enable support for camera api v2 -->
+    <bool name="support_camera_api_v2">true</bool>
+
+    <!-- This value may be tweaked to save memory on low RAM devices. The value
+         is the percentage of camera preview height/width to scale to. -->
+    <integer name="panorama_frame_size_reduction">100</integer>
+
+    <!-- A list of scenemodes where Longshot should be enabled. Comma separated.
+         An empty list will use the default restrictions. If defined, longshot
+         will be enabled ONLY for these scenemodes and disabled for others.
+         Here's a hack to disable longshot. -->
+    <string-array name="longshot_scenemodes">
+        <item>placeholder</item>
+    </string-array>
 </resources>
-

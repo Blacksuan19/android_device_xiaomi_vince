@@ -52,7 +52,9 @@ media.camera.ts.monotonic=1 \
 persist.camera.gyro.disable=0 \
 persist.camera.isp.clock.optmz=0 \
 persist.camera.stats.test=5 \
-vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.dcvs.extra-buff-count=2 \
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
+persist.camera.HAL3.enabled=1
 
 # Cne/Dpm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -77,8 +79,7 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=480 \
-qemu.hw.mainkeys=0
+ro.sf.lcd_density=480
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -180,3 +181,9 @@ net.tcp.2g_init_rwnd=10
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+# Higher fling velocities to smooth scrolling
+# and provide better responsiveness
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.min.fling_velocity=160 \
+ro.max.fling_velocity=20000
