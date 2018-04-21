@@ -278,5 +278,7 @@
 /dev/kmsg                                               0620   root       system 
 
 # lirc
-/dev/lirc0                0660   system     system
 /dev/peel_ir              0660   system     system
+
+# dt2w
+/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input2     wake_gesture     0644    system  system
