@@ -371,4 +371,7 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
     </string-array>
+
+   <!-- Enable system navigation keys. -->
+   <bool name="config_supportSystemNavigationKeys">true</bool>
 </resources>

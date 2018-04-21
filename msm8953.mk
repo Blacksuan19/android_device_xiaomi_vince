@@ -293,7 +293,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service-qti
+    android.hardware.power@1.0-service-qti \
+    vendor.lineage.power@1.0_vendor
 
 # Properties
 -include device/xiaomi/msm8953-common/prop.mk
