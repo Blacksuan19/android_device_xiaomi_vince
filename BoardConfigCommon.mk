@@ -115,6 +115,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+BOARD_USES_ADRENO := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
@@ -187,7 +188,11 @@ TARGET_USE_SDCLANG := true
 TARGET_RIL_VARIANT := caf
 
 # Recovery
+ifeq ($(AB_OTA_UPDATER), true)
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab_AB.qcom
+else
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/recovery/fstab.qcom
+endif
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -204,8 +209,6 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_P2P := "p2p"
-WIFI_HIDL_FEATURE_AWARE := true
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk

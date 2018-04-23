@@ -266,6 +266,39 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFingerprintAuthenticator</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintCalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintNavigation</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintRecalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSenseTouch</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -334,6 +367,15 @@
         <version>1.0</version>
         <interface>
             <name>IDisplayPostproc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.goodix.hardware.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGoodixBiometricsFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -480,6 +522,6 @@
         </interface>
     </hal>
     <sepolicy>
-        <version>0.0</version>
+        <version>27.0</version>
     </sepolicy>
 </manifest> 
