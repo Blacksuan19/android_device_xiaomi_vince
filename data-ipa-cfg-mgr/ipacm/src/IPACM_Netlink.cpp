@@ -735,6 +735,7 @@ static int ipa_nl_decode_nlmsg
 					if(ret_val != IPACM_SUCCESS)
 					{
 						IPACMERR("Error while getting interface name\n");
+						free(data_fid);
 						return IPACM_FAILURE;
 					}
 					IPACMDBG_H("Got a usb link_down event (Interface %s) \n", dev_name);
