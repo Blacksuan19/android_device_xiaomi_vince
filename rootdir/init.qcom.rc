@@ -291,6 +291,9 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.3/polling
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
+    chown system system /dev/peel_ir 
+    chmod 0666 /dev/peel_ir 
+
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
@@ -578,3 +581,4 @@ service time_daemon /system/vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+
