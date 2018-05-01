@@ -35,7 +35,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
 # Permissions
@@ -251,7 +251,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-qdcm
+    vendor.lineage.livedisplay@1.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \

@@ -1,0 +1,2 @@
+allow hal_audio_default persist_file:file { read open getattr };
+allow hal_audio_default persist_file:dir search;
