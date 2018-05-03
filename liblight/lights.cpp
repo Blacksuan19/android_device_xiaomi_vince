@@ -154,6 +154,12 @@ set_speaker_light_locked(struct light_device_t* dev,
     }
 
     colorRGB = state->color;
+
+    colorRGB = 16711680;
+
+    if ( !(state->color & 0xFFFFFF) )
+      colorRGB  = state->color;
+
     red = (colorRGB >> 16) & 0xFF;
     green = (colorRGB >> 8) & 0xFF;
     blue = colorRGB & 0xFF;
