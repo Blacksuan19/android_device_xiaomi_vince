@@ -135,6 +135,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
+# Camera-face detection
+PRODUCT_PACKAGES += \
+    com.qualcomm.qti.camera
+
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
@@ -156,8 +160,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libgenlock \
     libtinyxml \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.0_vendor
+    vendor.display.config@1.1 \
+    vendor.display.config@1.1_vendor
 
 # DRM
 PRODUCT_PACKAGES += \
