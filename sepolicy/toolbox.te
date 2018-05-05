@@ -1,0 +1,4 @@
+allow toolbox init:fifo_file { getattr read write };
+allow toolbox property_socket:sock_file write;
+allow toolbox init:unix_stream_socket connectto;
+allow toolbox rmnet_mux_prop:file { getattr };

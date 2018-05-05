@@ -253,6 +253,6 @@ static void getDebugReport(GnssDebugReport& report) {
 
 static void updateConnectionStatus(bool connected, uint8_t type) {
     if (NULL != gGnssAdapter) {
-        gGnssAdapter->getSystemStatus()->eventConnectionStatus(connected, type);
+        gGnssAdapter->updateConnectionStatusCommand(connected, type);
     }
 }

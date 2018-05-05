@@ -26,8 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #
+
 on early-init
+    mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
+    mkdir /dsp 0771 media media
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -110,6 +113,11 @@ service adsprpcd /vendor/bin/adsprpcd
    user media
    group media
 
+service audiod /vendor/bin/audiod
+   class late_start
+   user system
+   group system
+
 service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
@@ -179,14 +187,15 @@ service energy-awareness /vendor/bin/energy-awareness
 service hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
-    group system wakelock
+    group root
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
     start hvdcp_opti
-    start thermal-engine
 
 on boot
 	write /dev/cpuset/top-app/cpus 0-7

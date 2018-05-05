@@ -1,0 +1,2 @@
+allow audioserver hal_perf_hwservice:hwservice_manager { find };
+allow audioserver hal_perf_default:binder { call };

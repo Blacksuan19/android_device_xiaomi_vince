@@ -462,11 +462,9 @@ void AgpsStateMachine::setAPN(char* apn, unsigned int len){
 
     if (NULL != apn) {
         mAPN = new char[len+1];
-        if (NULL != mAPN) {
-            memcpy(mAPN, apn, len);
-            mAPN[len] = '\0';
-            mAPNLen = len;
-        }
+        memcpy(mAPN, apn, len);
+        mAPN[len] = '\0';
+        mAPNLen = len;
     }
 }
 
@@ -682,7 +680,6 @@ void DSStateMachine::notifyEventToSubscriber(
 
         case AGPS_EVENT_RELEASED:
             mAgpsManager->mDSClientCloseDataCallFn();
-            mAgpsManager->mAtlCloseStatusCb(subscriberToNotify->mConnHandle, 1);
             break;
 
         default:
