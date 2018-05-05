@@ -135,10 +135,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
-# Camera-face detection
-PRODUCT_PACKAGES += \
-    com.qualcomm.qti.camera
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service

@@ -35,6 +35,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_BOARD_PLATFORM := msm8953
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
@@ -97,7 +100,7 @@ TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8996
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USES_QTI_CAMERA_DEVICE := true
+BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
 
 # Charger
@@ -109,6 +112,10 @@ BOARD_USES_QCNE := true
 
 # Cpusets
 ENABLE_CPUSETS := true
+
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(PLATFORM_PATH)/cryptfs_hw
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
@@ -189,8 +196,8 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery/fstab.qcom
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+include vendor/omni/sepolicy/sepolicy.mk
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN			:= true
