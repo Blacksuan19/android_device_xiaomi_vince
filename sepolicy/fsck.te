@@ -1,0 +1,2 @@
+allow fsck persist_file:dir getattr;
+
