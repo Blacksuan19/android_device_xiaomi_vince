@@ -16,5 +16,6 @@
  -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <bool name="config_has_multi_color_led">false</bool>
     <string name="config_cpufreq_show_cpus">0</string>
 </resources>
