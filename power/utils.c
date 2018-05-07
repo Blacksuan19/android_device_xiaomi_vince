@@ -228,7 +228,7 @@ void interaction(int duration, int num_args, int opt_list[])
         if (perf_lock_acq) {
             lock_handle = perf_lock_acq(lock_handle, duration, opt_list, num_args);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGE("%s: Failed to acquire lock.", __func__);
         }
     }
 #endif
@@ -243,7 +243,7 @@ int interaction_with_handle(int lock_handle, int duration, int num_args, int opt
         if (perf_lock_acq) {
             lock_handle = perf_lock_acq(lock_handle, duration, opt_list, num_args);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGE("%s: Failed to acquire lock.", __func__);
         }
     }
     return lock_handle;
@@ -262,7 +262,7 @@ int perf_hint_enable(int hint_id , int duration)
         if (perf_hint) {
             lock_handle = perf_hint(hint_id, NULL, duration, -1);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGE("%s: Failed to acquire lock.", __func__);
         }
     }
     return lock_handle;
@@ -283,7 +283,7 @@ void perform_hint_action(int hint_id, int resource_values[], int num_resources)
                     num_resources);
 
             if (lock_handle == -1) {
-                ALOGE("Failed to acquire lock.");
+                ALOGE("%s: Failed to acquire lock.", __func__);
             } else {
                 /* Add this handle to our internal hint-list. */
                 struct hint_data *new_hint =
@@ -305,14 +305,14 @@ void perform_hint_action(int hint_id, int resource_values[], int num_resources)
                         if (perf_lock_rel)
                             perf_lock_rel(lock_handle);
 
-                        ALOGE("Failed to process hint.");
+                        ALOGE("%s: Failed to process hint.", __func__);
                     }
                 } else {
                     /* Can't keep track of this lock. Release it. */
                     if (perf_lock_rel)
                         perf_lock_rel(lock_handle);
 
-                    ALOGE("Failed to process hint.");
+                    ALOGE("%s: Failed to process hint.", __func__);
                 }
             }
         }
@@ -349,7 +349,7 @@ void undo_hint_action(int hint_id)
 
                 remove_list_node(&active_hint_list_head, found_node);
             } else {
-                ALOGE("Invalid hint ID.");
+                ALOGE("%s: Invalid hint ID: %d.", __func__, hint_id);
             }
         }
     }
