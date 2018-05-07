@@ -3,7 +3,7 @@
     "remote": "omnirom",
     "repository": "android_kernel_xiaomi_vince",
     "target_path": "kernel/xiaomi/vince",
-    "revision": "lineage-15.1-nontreble"
+    "revision": "android-8.1"
   },
   {
     "remote": "omnirom",
