@@ -632,6 +632,7 @@ vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib/vendor.display.config@1.0_vendor.so
+vendor/lib/vendor.display.config@1.1_vendor.so
 vendor/lib64/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
 vendor/lib64/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so
@@ -642,3 +643,4 @@ vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/libwfdmmservice.so
 vendor/lib64/libwfdmodulehdcpsession.so
 vendor/lib64/vendor.display.config@1.0_vendor.so
+vendor/lib64/vendor.display.config@1.1_vendor.so
