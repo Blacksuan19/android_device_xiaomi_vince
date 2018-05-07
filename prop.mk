@@ -128,7 +128,8 @@ vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
-vendor.vidc.enc.disable_bframes=1
+vendor.vidc.enc.disable_bframes=1 \
+debug.sf.enable_hwc_vds=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
