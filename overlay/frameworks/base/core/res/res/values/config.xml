@@ -88,11 +88,11 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>1</item>
+        <item>2</item>
         <item>3</item>
-        <item>3</item>
-        <item>3</item>
-        <item>6</item>
-        <item>6</item>
+        <item>4</item>
+        <item>5</item>
         <item>6</item>
         <item>6</item>
         <item>20</item>
@@ -118,7 +118,7 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">3</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
    <!-- Default value for led color when battery is low on charge -->
     <integer name="config_notificationsBatteryLowARGB">0xFFFFFFFF</integer>
