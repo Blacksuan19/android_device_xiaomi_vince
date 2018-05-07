@@ -1,4 +1,2 @@
 allow system_server qti_debugfs:file r_file_perms;
 allow system_server unlabeled:file unlink;
-allow system_server sysfs_touchpanel:dir { search };
-allow system_server sysfs_touchpanel:file rw_file_perms;
