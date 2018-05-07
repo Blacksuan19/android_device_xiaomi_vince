@@ -36,7 +36,7 @@
 # Power HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti      u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti      u:object_r:hal_power_default_exec:s0
-/sys/devices/soc/78b7000\.i2c/i2c-3/3-[0-9a-f]+/input/input[0-9]+/wake_gesture u:object_r:sysfs_touchpanel:s0
+/sys/devices/soc/78b7000\.i2c/i2c-3/3-0020/input/input[0-9]+/wake_gesture     u:object_r:sysfs_touchpanel:s0
 
 # Thermal engine
 /data/decrypt\.txt                                            u:object_r:thermal_decrypt_file:s0
