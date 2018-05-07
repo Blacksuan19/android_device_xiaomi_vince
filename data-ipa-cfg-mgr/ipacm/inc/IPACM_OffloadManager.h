@@ -96,7 +96,7 @@ public:
 
 private:
 
-	std::list<const char *> valid_ifaces;
+	std::list<std::string> valid_ifaces;
 
 	bool upstream_v4_up;
 
@@ -114,6 +114,7 @@ private:
 
 	/* cache the add_downstream events if netdev is not ready */
 	framework_event_cache event_cache[MAX_EVENT_CACHE];
+	bool is_cache;
 
 	/* latest update cache entry */
 	int latest_cache_index;
