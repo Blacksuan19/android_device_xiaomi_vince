@@ -133,7 +133,6 @@ on boot
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
-
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
 #   Assign TCP buffer thresholds to be ceiling value of technology maximums
@@ -159,10 +158,6 @@ on boot
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
-    # Glove Mode
-    chown system system /sys/class/tp_glove/device/glove_enable
-    chmod 0660 /sys/class/tp_glove/device/glove_enable
-
     # Notification LED
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
@@ -170,12 +165,6 @@ on boot
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
-
-    # Flashlight
-    chown root system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness
-    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness
-    chown root system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
-    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
 
     # Vibrator permissions
     chown root system /sys/class/timed_output/vibrator/vtg_level
