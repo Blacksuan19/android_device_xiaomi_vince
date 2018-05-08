@@ -73,6 +73,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.bluetooth_audio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothAudio</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.goodix.hardware.fingerprint</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -455,6 +464,7 @@
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
+            <instance>UimLpa1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -516,7 +526,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- WFD HAL Service -->
     <hal format="hidl">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <transport>hwbinder</transport>
