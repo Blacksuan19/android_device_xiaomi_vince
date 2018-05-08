@@ -37,6 +37,9 @@
 # Goodix script
 /(vendor|system/vendor)/bin/init\.goodix\.sh                    u:object_r:qti_init_shell_exec:s0
 
+# IR
+/dev/peel_ir                                                  u:object_r:ir_device:s0
+
 # Power HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti      u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti      u:object_r:hal_power_default_exec:s0
