@@ -16,22 +16,18 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mido device
+# Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
-# Inherit from Omni custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
-# must be before including omni part
-TARGET_BOOTANIMATION_SIZE := 1080p
+# Inherit some common AEX stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Device identifier. This must come after all inclusions
 TARGET_VENDOR := Xiaomi
 PRODUCT_DEVICE := vince
-PRODUCT_NAME := omni_vince
+PRODUCT_NAME := aosp_vince
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
@@ -40,6 +36,7 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="xiaomi/vince/vince:8.1.0/OPM1.171019.019/8.5.3:user/release-keys" \
-    PRIVATE_BUILD_DESC="vince-user 8.1.0 OPM1.171019.019 8.5.3 release-keys"
+    PRIVATE_BUILD_DESC="vince-user 8.1.0 OPM1.171019.019 8.5.9 release-keys"
 
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := "xiaomi/vince/vince:8.1.0/OPM1.171019.019/8.5.9:user/release-keys"

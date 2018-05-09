@@ -16,6 +16,7 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, vendor/xiaomi/vince/vince-vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -24,9 +25,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2160
-TARGET_SCREEN_WIDTH := 1080
+#Bootanimation res
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     camera.msm8953 \
     libmm-qcamera \
-    SnapdragonCamera2 \
+    Snap \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -157,8 +157,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libgenlock \
     libtinyxml \
-    vendor.display.config@1.1 \
-    vendor.display.config@1.1_vendor
+    vendor.display.config@1.0 \
+    vendor.display.config@1.0_vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -203,10 +203,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     chargeonlymode
 
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-convert \
+    android.hardware.health@1.0-service \
+    android.hardware.health@1.0
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0-java
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -280,7 +288,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-     android.hardware.power@1.0-service-qti
+     android.hardware.power@1.1-service-qti
 
 # Properties
 -include device/xiaomi/vince/prop.mk
@@ -376,7 +384,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-# Xiaomi
-PRODUCT_PACKAGES += \
-    XiaomiDoze \
-    XiaomiParts

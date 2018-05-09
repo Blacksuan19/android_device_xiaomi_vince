@@ -215,3 +215,7 @@ ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.min.fling_velocity=160 \
 ro.max.fling_velocity=20000
+
+#low audio flinger standby delay to reduce power consumption
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.audio.flinger_standbytime_ms=300

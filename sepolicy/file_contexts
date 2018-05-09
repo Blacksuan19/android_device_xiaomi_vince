@@ -41,12 +41,9 @@
 /dev/peel_ir                                                  u:object_r:ir_device:s0
 
 # Power HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service-qti      u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service-qti      u:object_r:hal_power_default_exec:s0
 /sys/devices/soc/78b7000\.i2c/i2c-3/3-0020/input/input[0-9]+/wake_gesture     u:object_r:sysfs_touchpanel:s0
 
 # Sysfs
-/sys/devices/virtual/timed_output/vibrator/vtg_level            u:object_r:sysfs_vibrator:s0
 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness          u:object_r:sysfs_torch:s0
 
