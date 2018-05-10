@@ -140,6 +140,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 BOARD_USES_ADRENO := true
 
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := exfat
+
 # Filesystem
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
