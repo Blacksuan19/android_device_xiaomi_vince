@@ -13,20 +13,24 @@
 # HVDCP
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
 
+# Block devices
+/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
+/dev/block/mmcblk0p26                           u:object_r:block_device:s0
+
 # Power HAL
 /sys/devices/soc/78b7000\.i2c/i2c-3/3-0020/input/input[0-9]+/wake_gesture u:object_r:sysfs_touchpanel:s0
-
-# Readmac
-/(vendor|system/vendor)/bin/readmac                           u:object_r:readmac_exec:s0
 
 # Camera
 /system/vendor/bin/mm-qcamera-daemon		u:object_r:mm-qcamerad_exec:s0
 
+# Data files
+/data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+/data/vendor/time(/.*)?                         u:object_r:time_data_file:s0
+
 # Debugfs files
 /sys/kernel/debug/rmt_storage(/.*)?             u:object_r:debugfs_rmt:s0
-
-# Block devices
-/dev/block/mmcblk0p27                           u:object_r:persist_block_device:s0
+/sys/kernel/debug/rpm_stats                     u:object_r:debugfs_rpm:s0
+/sys/kernel/debug/rpm_master_stats              u:object_r:debugfs_rpm:s0
 
 # IR
 /dev/peel_ir                                                  u:object_r:ir_device:s0
