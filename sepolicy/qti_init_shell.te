@@ -1,7 +1,6 @@
 set_prop(qti_init_shell, sensors_panel_prop);
 allow qti_init_shell { sysfs sysfs_devices_system_cpu }:dir write;
 allow qti_init_shell sysfs:file write;
-allow qti_init_shell sysfs:dir { write };
 allow qti_init_shell proc:dir setattr;
 allow qti_init_shell system_data_file:file getattr;
 allow qti_init_shell persist_drm_file:dir { read search open write remove_name };
