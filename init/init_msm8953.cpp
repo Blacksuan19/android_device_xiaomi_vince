@@ -28,14 +28,11 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <sys/sysinfo.h>
-#include <android-base/logging.h>
 
+#include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
-
-namespace android {
-namespace init {
 
 char const *heapstartsize;
 char const *heapgrowthlimit;
@@ -43,6 +40,8 @@ char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
 char const *large_cache_height;
+
+using android::init::property_set;
 
 static void init_alarm_boot_properties()
 {
@@ -89,21 +88,13 @@ void check_device()
         heapminfree = "4m";
         heapmaxfree = "8m";
 	large_cache_height = "2048";
-    } else if (sys.totalram > 2048ull * 1024 * 1024) {
+    } else {
         // from - phone-xxhdpi-3072-dalvik-heap.mk
         heapstartsize = "8m";
         heapgrowthlimit = "288m";
         heapsize = "768m";
         heapminfree = "512k";
 	heapmaxfree = "8m";
-        large_cache_height = "1024";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heapminfree = "2m";
-        heapmaxfree = "8m";
         large_cache_height = "1024";
    }
 }
@@ -132,5 +123,3 @@ void vendor_load_properties()
     property_set("ro.hwui.text_large_cache_width", "2048");
     property_set("ro.hwui.text_large_cache_height", large_cache_height);
 }
-}  // namespace init
-}  // namespace android
