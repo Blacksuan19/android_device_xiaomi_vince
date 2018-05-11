@@ -339,11 +339,6 @@
     in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
 
-    <!-- Default value for proximity check on screen wake
-    NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
-
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/system/framework/arm64/boot-framework.oat"</item>
