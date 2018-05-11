@@ -51,6 +51,9 @@ KBUILD_COMPILER_STRING := dragontc-7.0
 export KBUILD_COMPILER_STRING
 TARGET_KERNEL_CLANG_PATH := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/dragontc-7.0/bin
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
