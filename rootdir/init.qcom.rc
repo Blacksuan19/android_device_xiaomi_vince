@@ -320,11 +320,8 @@ on post-fs-data
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
-    # Create /data/vendor/time folder for time-services
-    mkdir /data/vendor/time/ 0700 system system
-
-    # backward comp
-    symlink /data/vendor/time /data/time
+    # Create /data/time folder for time-services
+    mkdir /data/time/ 0700 system system
 
     mkdir /data/vendor/audio/ 0770 media audio
 
@@ -465,6 +462,12 @@ service start_hci_filter /vendor/bin/wcnss_filter
     seclabel u:r:bluetooth:s0
     disabled
 
+service atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    writepid /dev/cpuset/system-background/tasks
+
 service netmgrd /vendor/bin/netmgrd
     class main
     user root
@@ -487,7 +490,7 @@ service ipacm /vendor/bin/ipacm
 service qti /vendor/bin/qti
     class main
     user radio
-    group radio net_raw diag usb net_admin
+    group radio diag usb net_admin
     disabled
     writepid /dev/cpuset/system-background/tasks
 

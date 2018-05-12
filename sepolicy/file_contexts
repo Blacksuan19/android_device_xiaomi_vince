@@ -2,16 +2,18 @@
 /data/fpc(/.*)?					u:object_r:fpc_data_file:s0
 /dev/socket/fpce(/.*)?				u:object_r:fpce_socket:s0
 /sys/devices/soc/soc:fpc1020(/.*)?		u:object_r:fpc_sysfs:s0
-/dev/goodix_fp*					u:object_r:fingerprintd_device:s0
+/dev/goodix_fp					u:object_r:fingerprintd_device:s0
 /data/gf_data(/.*)?                             u:object_r:fingerprintd_data_file:s0
 /data/system/fingerprint(/.*)?			u:object_r:fingerprintd_data_file:s0
 /data/vendor/fpc(/.*)?                          u:object_r:fingerprintd_data_file:s0
 /data/vendor/goodix(/.*)?                       u:object_r:fingerprintd_data_file:s0
 /data/misc/gf_data(/.*)?                        u:object_r:fingerprintd_data_file:s0
 /data/misc/goodix(/.*)?                         u:object_r:fingerprintd_data_file:s0
+/data/fpc/test.db				u:object_r:fingerprintd_data_file:s0
+/data/fpc/test.db.bak				u:object_r:fingerprintd_data_file:s0
 
 # HVDCP
-/sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?            u:object_r:sysfs_usb_supply:s0
 
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
@@ -25,7 +27,7 @@
 
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
-/data/vendor/time(/.*)?                         u:object_r:time_data_file:s0
+/data/time(/.*)?                         u:object_r:time_data_file:s0
 
 # Debugfs files
 /sys/kernel/debug/rmt_storage(/.*)?             u:object_r:debugfs_rmt:s0
@@ -35,9 +37,12 @@
 # IR
 /dev/peel_ir                                                  u:object_r:ir_device:s0
 
-# Sensors
-/(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
-/persist/PRSensorData\.txt                                    u:object_r:sensors_persist_file:s0
+# Rild
+/(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
+
+# Sysfs
+/sys/devices/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?		u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?				u:object_r:sysfs_leds:s0
 
 # Goodix script
 /(vendor|system/vendor)/bin/init\.goodix\.sh                    u:object_r:qti_init_shell_exec:s0

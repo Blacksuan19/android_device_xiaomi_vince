@@ -2,3 +2,4 @@ set_prop(rild, system_radio_prop);
 set_prop(rild, debug_prop);
 allow rild debug_prop:property_service { set };
 allow rild vendor_file:file ioctl;
+allow rild rild_file:file r_file_perms;

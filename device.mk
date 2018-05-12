@@ -120,7 +120,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
@@ -243,8 +242,7 @@ PRODUCT_COPY_FILES += \
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service \
-    libkeymaster1
+    android.hardware.keymaster@3.0-service
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -310,7 +308,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.qcom.usb.sh \
     init.target.rc \
     init.vince.rc \
     init.goodix.sh \
