@@ -69,6 +69,7 @@ vidc.enc.dcvs.extra-buff-count=2 \
 persist.vendor.qti.telephony.vt_cam_interface=1 \
 persist.camera.HAL3.enabled=1 \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
+vendor.camera.aux.packagelist2=com.google.android.GoogleCameraWide \
 persist.camera.eis.enable=1
 
 # Cne/Dpm
