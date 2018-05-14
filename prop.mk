@@ -132,7 +132,8 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 vendor.vidc.enc.disable_bframes=1 \
-debug.sf.enable_hwc_vds=1
+debug.sf.enable_hwc_vds=1 \
+persist.sys.wfd.virtual=0
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
