@@ -163,6 +163,9 @@ persist.rild.nitz_short_ons_3=""
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.display.enable_default_color_mode=1
 
+# Priv-app permissions whitelist
+ro.control_privapp_permissions=enforce
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PROVISIONED=1 \
