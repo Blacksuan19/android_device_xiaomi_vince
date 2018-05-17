@@ -156,8 +156,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libgenlock \
     libtinyxml \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.0_vendor
+    vendor.display.config@1.1 \
+    vendor.display.config@1.1_vendor
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -290,7 +290,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-     android.hardware.power@1.1-service-qti
+     android.hardware.power@1.0-service-qti
 
 # Properties
 -include device/xiaomi/vince/prop.mk
@@ -345,10 +345,6 @@ PRODUCT_COPY_FILES += \
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
-
-# USB HAL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
 
 # VNDK
 PRODUCT_PACKAGES += \
