@@ -158,7 +158,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
-TARGET_NO_RPC := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
@@ -194,7 +193,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 25765043200 # 25765059584 - 16384
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+TARGET_HAS_NO_WIFI_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture"
 
 # Root Folders
@@ -202,7 +201,6 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_USE_SDCLANG := true
 
 # RIL
 TARGET_RIL_VARIANT := caf

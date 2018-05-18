@@ -239,7 +239,7 @@
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.0</version>
         <interface>
             <name>IPower</name>
             <instance>default</instance>
@@ -299,6 +299,15 @@
         <version>1.0</version>
         <interface>
             <name>IVibrator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+     <hal format="hidl">
+        <name>android.hardware.usb</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUsb</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -377,7 +386,7 @@
     <hal format="hidl">
         <name>vendor.display.config</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
@@ -389,6 +398,24 @@
         <version>1.0</version>
         <interface>
             <name>IDisplayPostproc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.livedisplay</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IColor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILineagePower</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -533,20 +560,6 @@
         <interface>
             <name>ITuiComm</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>com.qualcomm.qti.wifidisplayhal</name>
-        <transport>hwbinder</transport>
-        <impl level="generic"></impl>
-        <version>1.0</version>
-        <interface>
-            <name>IHDCPSession</name>
-            <instance>wifidisplayhdcphal</instance>
-        </interface>
-        <interface>
-            <name>IDSManager</name>
-            <instance>wifidisplaydshal</instance>
         </interface>
     </hal>
     <hal format="hidl">

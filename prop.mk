@@ -23,9 +23,9 @@ audio.offload.min.duration.secs=30 \
 audio.offload.video=true \
 persist.vendor.audio.fluence.speaker=true \
 persist.vendor.audio.fluence.voicecall=true \
-persist.vendor.audio.fluence.voicerec=true \
+persist.vendor.audio.fluence.voicerec=false \
 persist.vendor.bt.enable.splita2dp=false \
-ro.vendor.audio.sdk.fluencetype=fluencepro \
+ro.vendor.audio.sdk.fluencetype=none \
 ro.vendor.audio.sdk.ssr=false \
 vendor.audio.flac.sw.decoder.24bit=true \
 vendor.audio.offload.buffer.size.kb=64 \
@@ -69,7 +69,7 @@ vidc.enc.dcvs.extra-buff-count=2 \
 persist.vendor.qti.telephony.vt_cam_interface=1 \
 persist.camera.HAL3.enabled=1 \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
-persist.camera.eis.enable=1
+vendor.camera.aux.packagelist2=com.google.android.GoogleCameraWide
 
 # Cne/Dpm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,8 +132,7 @@ vendor.vidc.dec.downscalar_height=1088 \
 vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
-vendor.vidc.enc.disable_bframes=1 \
-debug.sf.enable_hwc_vds=1
+vendor.vidc.enc.disable_bframes=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -161,6 +160,10 @@ persist.rild.nitz_short_ons_3=""
 # Property to enable display default color mode
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.display.enable_default_color_mode=1
+
+# Priv-app permissions whitelist
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.control_privapp_permissions=enforce
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -216,7 +219,3 @@ ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.min.fling_velocity=160 \
 ro.max.fling_velocity=20000
-
-#low audio flinger standby delay to reduce power consumption
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.audio.flinger_standbytime_ms=300

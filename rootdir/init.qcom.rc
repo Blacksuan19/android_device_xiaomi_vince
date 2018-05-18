@@ -25,7 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-init.omni.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 
@@ -165,14 +164,6 @@ on boot
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
-
-    # Vibrator permissions
-    chown root system /sys/class/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
-
-    # Buttons
-    chown root system /proc/touchpanel/capacitive_keys_disable
-    chmod 0660 /proc/touchpanel/capacitive_keys_disable
 
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
@@ -397,7 +388,7 @@ on post-fs-data
 on property:hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${hw.fm.init}
 
-service iop /vendor/bin/iop
+service iop /system/vendor/bin/iop
     class main
     user root
     group root
@@ -420,13 +411,13 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service cnd /vendor/bin/cnd
+service cnd /system/vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
     writepid /dev/cpuset/system-background/tasks
 
-service dpmQmiMgr /vendor/bin/dpmQmiMgr
+service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     class main
     user system
     group system
@@ -455,7 +446,7 @@ on property:wc_transport.start_hci=true
 on property:wc_transport.start_hci=false
     stop start_hci_filter
 
-service start_hci_filter /vendor/bin/wcnss_filter
+service start_hci_filter /system/vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
@@ -468,30 +459,27 @@ service atfwd /vendor/bin/ATFWD-daemon
     group system radio
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /vendor/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
-    user root
-    group root wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
 
-service ipacm-diag /vendor/bin/ipacm-diag
+service ipacm-diag /system/vendor/bin/ipacm-diag
     class main
     user radio
     socket ipacm_log_file dgram 660 radio radio
     group radio diag
     writepid /dev/cpuset/system-background/tasks
 
-service ipacm /vendor/bin/ipacm
+service ipacm /system/vendor/bin/ipacm
     class main
     user radio
     group radio inet
     writepid /dev/cpuset/system-background/tasks
 
-service qti /vendor/bin/qti
+service qti /system/vendor/bin/qti
     class main
     user radio
     group radio diag usb net_admin
-    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service sensors /vendor/bin/sensors.qcom
@@ -528,7 +516,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service loc_launcher /vendor/bin/loc_launcher
+service loc_launcher /system/vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
@@ -548,12 +536,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-    disabled
-
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
@@ -570,26 +552,19 @@ service charger /sbin/chargeonlymode
     class charger
     group system graphics
     seclabel u:r:charger:s0
-    writepid /dev/cpuset/system-background/tasks
 
-service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
+service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
     disabled
-
-service qseeproxydaemon /vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
 
 on charger
     setprop persist.sys.usb.config mass_storage
     load_system_props
     start qcom-post-boot
 
-service time_daemon /vendor/bin/time_daemon
+service time_daemon /system/vendor/bin/time_daemon
     class main
     user root
     group root
