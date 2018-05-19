@@ -16,8 +16,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
 
 # Block devices
-/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
-/dev/block/mmcblk0p26                           u:object_r:block_device:s0
+/dev/block/mmcblk0p26  		u:object_r:persist_block_device:s0
 
 # Camera
 /system/vendor/bin/mm-qcamera-daemon		u:object_r:mm-qcamerad_exec:s0
