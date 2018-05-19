@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    camera.device@3.1-impl \
     camera.device@3.2-impl \
     camera.msm8953 \
     libmm-qcamera \
@@ -189,6 +190,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    gps.msm8953 \
     libcurl \
     libgnss \
     libgnsspps
@@ -294,6 +296,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+     android.hardware.power@1.0-impl \
      android.hardware.power@1.0-service-qti
 
 # Properties

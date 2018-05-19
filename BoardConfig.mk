@@ -117,10 +117,10 @@ ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
     endif
   endif
 endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
@@ -157,6 +157,7 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Filesystem
@@ -165,6 +166,9 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
+
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8953
