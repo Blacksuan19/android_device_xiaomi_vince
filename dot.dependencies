@@ -14,9 +14,5 @@
  {
    "repository": "dragontc-7.0",
    "target_path": "prebuilts/clang/host/linux-x86/dragontc-7.0"
- },
- {
-   "repository": "android_packages_resources_devicesettings",
-   "target_path": "packages/resources/devicesettings"
  }
 ]
