@@ -21,11 +21,11 @@ audio.deep_buffer.media=true \
 audio.offload.disable=true \
 audio.offload.min.duration.secs=30 \
 audio.offload.video=true \
+ro.vendor.audio.sdk.fluencetype=fluence \
 persist.vendor.audio.fluence.speaker=true \
 persist.vendor.audio.fluence.voicecall=true \
 persist.vendor.audio.fluence.voicerec=false \
 persist.vendor.bt.enable.splita2dp=false \
-ro.vendor.audio.sdk.fluencetype=none \
 ro.vendor.audio.sdk.ssr=false \
 vendor.audio.flac.sw.decoder.24bit=true \
 vendor.audio.offload.buffer.size.kb=64 \
@@ -195,8 +195,7 @@ telephony.lteOnCdmaDevice=1
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.timed.enable=true \
-persist.delta_time.enable=true
+persist.timed.enable=true
 
 # Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -205,14 +204,6 @@ net.tcp.2g_init_rwnd=10
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
-
-# Trim properties
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.qti.sys.fw.use_trim_settings=true \
-ro.vendor.qti.sys.fw.empty_app_percent=50 \
-ro.vendor.qti.sys.fw.trim_empty_percent=100 \
-ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # Higher fling velocities to smooth scrolling
 # and provide better responsiveness
