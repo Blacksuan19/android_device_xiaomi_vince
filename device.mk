@@ -151,6 +151,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    copybit.msm8953 \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
     memtrack.msm8953 \
@@ -351,10 +352,6 @@ PRODUCT_COPY_FILES += \
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
-
-# USB HAL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
 
 # VNDK
 PRODUCT_PACKAGES += \
