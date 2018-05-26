@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,11 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.UserHandle;
 import android.support.v7.preference.PreferenceManager;
 import android.provider.Settings;
@@ -32,6 +33,8 @@ public final class Utils {
     private static final boolean DEBUG = false;
 
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
+
+    protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
 
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
@@ -57,6 +60,17 @@ public final class Utils {
         }
     }
 
+    protected static boolean getProxCheckBeforePulse(Context context) {
+        try {
+            Context con = context.createPackageContext("com.android.systemui", 0);
+            int id = con.getResources().getIdentifier("doze_proximity_check_before_pulse",
+                    "bool", "com.android.systemui");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
     protected static boolean isDozeEnabled(Context context) {
         return Settings.Secure.getInt(context.getContentResolver(),
                 DOZE_ENABLED, 1) != 0;
@@ -64,7 +78,7 @@ public final class Utils {
 
     protected static boolean enableDoze(boolean enable, Context context) {
         return Settings.Secure.putInt(context.getContentResolver(),
-                              DOZE_ENABLED, enable ? 1 : 0);
+                DOZE_ENABLED, enable ? 1 : 0);
     }
 
     protected static void launchDozePulse(Context context) {

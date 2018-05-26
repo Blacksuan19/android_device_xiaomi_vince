@@ -382,4 +382,7 @@
 
    <!-- Should the pinner service pin the Camera application? -->
    <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- Full screen aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 </resources>

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package org.lineageos.settings.doze;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -31,6 +31,7 @@ import android.os.Handler;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -43,7 +44,7 @@ import android.widget.TextView;
 public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
         CompoundButton.OnCheckedChangeListener {
 
-    TextView mTextView;
+    private TextView mTextView;
 
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
@@ -55,13 +56,16 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-
         SharedPreferences prefs = getActivity().getSharedPreferences("doze_settings",
                 Activity.MODE_PRIVATE);
         if (savedInstanceState == null && !prefs.getBoolean("first_help_shown", false)) {
+            showHelp();
         }
 
         boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
+
+        PreferenceCategory proximitySensorCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
 
         mPickUpPreference = (SwitchPreference) findPreference(Utils.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
@@ -71,6 +75,11 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
         mPocketPreference.setEnabled(dozeEnabled);
+
+        // Hide proximity sensor related features if the device doesn't support them
+        if (!Utils.getProxCheckBeforePulse(getActivity())) {
+            getPreferenceScreen().removePreference(proximitySensorCategory);
+        }
     }
 
     @Override
@@ -104,7 +113,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         });
     }
 
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Utils.checkDozeService(getActivity());
@@ -131,7 +139,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         }
         return false;
     }
- 
+
     private static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
