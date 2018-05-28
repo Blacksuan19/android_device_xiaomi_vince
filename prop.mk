@@ -2,11 +2,6 @@
 # system.prop for vince
 #
 
-# ART
-PRODUCT_PROPERTY_OVERRIDES += \
-dalvik.vm.dex2oat-filter=speed \
-dalvik.vm.image-dex2oat-filter=speed
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.audio.calfile0=/vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
@@ -21,11 +16,11 @@ audio.deep_buffer.media=true \
 audio.offload.disable=true \
 audio.offload.min.duration.secs=30 \
 audio.offload.video=true \
+ro.vendor.audio.sdk.fluencetype=none \
 persist.vendor.audio.fluence.speaker=true \
 persist.vendor.audio.fluence.voicecall=true \
 persist.vendor.audio.fluence.voicerec=false \
 persist.vendor.bt.enable.splita2dp=false \
-ro.vendor.audio.sdk.fluencetype=none \
 ro.vendor.audio.sdk.ssr=false \
 vendor.audio.flac.sw.decoder.24bit=true \
 vendor.audio.offload.buffer.size.kb=64 \
@@ -82,16 +77,19 @@ persist.debug.coresight.config=stm-events
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+debug.sf.enable_hwc_vds=1 \
+debug.sf.hw=0 \
+debug.sf.latch_unsignaled=1 \
 debug.egl.hw=0 \
-debug.enable.sglscale=1 \
+persist.hwc.mdpcomp.enable=true \
+sdm.debug.disable_skip_validate=1 \
 debug.gralloc.enable_fb_ubwc=1 \
 debug.mdpcomp.logs=0 \
-debug.sf.hw=0 \
 dev.pm.dyn_samplingrate=1 \
 persist.debug.wfd.enable=1 \
 persist.demo.hdmirotationlock=false \
+debug.enable.sglscale=1 \
 persist.hwc.enable_vds=1 \
-persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 ro.sf.lcd_density=440
@@ -195,8 +193,7 @@ telephony.lteOnCdmaDevice=1
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.timed.enable=true \
-persist.delta_time.enable=true
+persist.timed.enable=true
 
 # Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -214,8 +211,8 @@ ro.vendor.qti.sys.fw.trim_empty_percent=100 \
 ro.vendor.qti.sys.fw.trim_cache_percent=100 \
 ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
-# Higher fling velocities to smooth scrolling
-# and provide better responsiveness
+# Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.min.fling_velocity=160 \
-ro.max.fling_velocity=20000
+ro.vendor.qti.sys.fw.bservice_enable=true \
+ro.vendor.qti.sys.fw.bservice_limit=5 \
+ro.vendor.qti.sys.fw.bservice_age=5000
