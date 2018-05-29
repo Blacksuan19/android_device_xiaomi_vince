@@ -82,7 +82,7 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
 service per_mgr /vendor/bin/pm-service
     class core
     user system
-    group system
+    group system net_raw
     ioprio rt 4
     writepid /dev/cpuset/system-background/tasks
 
@@ -186,10 +186,10 @@ service energy-awareness /system/vendor/bin/energy-awareness
     group system
     oneshot
 
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
-    class main
-    user root
-    group system wakelock
+#service hvdcp_opti /system/vendor/bin/hvdcp_opti
+#    class main
+#    user root
+#    group system wakelock
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
@@ -197,7 +197,7 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    start hvdcp_opti
+#    start hvdcp_opti
     start thermal-engine
 
 on boot
