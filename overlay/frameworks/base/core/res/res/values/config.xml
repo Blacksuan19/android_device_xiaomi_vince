@@ -376,9 +376,6 @@
      <bool name="config_proximityCheckOnWake">true</bool>
      <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
-     <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
-    <bool name="config_dozePulsePickup">true</bool>
-
     <!-- AlwaysOnDisplay  -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
@@ -403,4 +400,7 @@
 
     <!-- Full screen aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
 </resources>
