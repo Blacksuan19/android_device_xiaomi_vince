@@ -78,16 +78,13 @@ persist.debug.coresight.config=stm-events
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.sf.enable_hwc_vds=1 \
-debug.sf.hw=0 \
 debug.sf.latch_unsignaled=1 \
-debug.egl.hw=0 \
 persist.hwc.mdpcomp.enable=true \
 sdm.debug.disable_skip_validate=1 \
+sdm.perf_hint_window=50 \
 debug.gralloc.enable_fb_ubwc=1 \
 debug.mdpcomp.logs=0 \
-dev.pm.dyn_samplingrate=1 \
 persist.debug.wfd.enable=1 \
-persist.demo.hdmirotationlock=false \
 debug.enable.sglscale=1 \
 persist.hwc.enable_vds=1 \
 ro.opengles.version=196610 \
@@ -200,6 +197,11 @@ persist.timed.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
 
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
+PRODUCT_PROPERTY_OVERRIDES += \
+vidc.debug.level=0
+
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
@@ -217,3 +219,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.bservice_enable=true \
 ro.vendor.qti.sys.fw.bservice_limit=5 \
 ro.vendor.qti.sys.fw.bservice_age=5000
+
+# Dex2oat threads for faster app installation
+# Use all 8 Cores/Threads of our CPU
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-threads=8 \
+dalvik.vm.image-dex2oat-threads=8 \
+debug.generate-debug-info=false
