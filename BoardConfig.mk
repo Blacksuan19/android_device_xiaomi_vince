@@ -106,9 +106,6 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # CNE / DPM
 BOARD_USES_QCNE := true
 
-# Cpusets
-ENABLE_CPUSETS := true
-
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
