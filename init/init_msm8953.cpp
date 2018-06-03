@@ -88,27 +88,6 @@ static void init_alarm_boot_properties()
      }
 }
 
-static void init_setup_model_properties()
-{
-    std::ifstream fin;
-    std::string buf;
-
-    std::string product = property_get("ro.product.name");
-    if (product.find("vince") == std::string::npos)
-        return;
-
-    fin.open("/proc/cmdline");
-    while (std::getline(fin, buf, ' '))
-        if (buf.find("product.region") != std::string::npos)
-            break;
-    fin.close();
-
-    if (buf.find("India") != std::string::npos) {
-        property_set("ro.product.model", "Redmi Note 5");
-    } else {
-        property_set("ro.product.model", "Redmi 5 Plus");
-    }
-}
 void check_device()
 {
     struct sysinfo sys;
@@ -138,7 +117,16 @@ void vendor_load_properties()
 {
     init_alarm_boot_properties();
     check_device();
-    init_setup_model_properties();
+
+    // For GSI
+    property_override("ro.product.model", "Redmi 5 Plus");
+    property_override("ro.product.brand", "Xiaomi");
+    property_override("ro.product.manufacturer", "Xiaomi");
+    property_override("ro.product.name", "vince");
+    property_override("ro.product.device", "vince");
+    property_override("ro.build.product", "vince");
+    property_override("ro.build.description", "vince-user 8.1.0 OPM1.171019.019 8.5.9 release-keys");
+    property_override("ro.build.fingerprint", "xiaomi/vince/vince:8.1.0/OPM1.171019.019/8.5.9:user/release-keys");
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
