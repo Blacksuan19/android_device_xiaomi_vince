@@ -21,6 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Vendor Properties Overrides
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.vendor.override.security_patch=$(PLATFORM_SECURITY_PATCH) \
+    ro.vendor.override.build_display=$(BUILD_ID)
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

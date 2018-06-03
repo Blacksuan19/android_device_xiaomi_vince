@@ -1,2 +1,2 @@
-add_lunch_combo aosp_vince-userdebug
+add_lunch_combo potato_vince-userdebug
 
