@@ -186,6 +186,7 @@ persist.radio.videopause.mode=1 \
 persist.vendor.radio.custom_ecc=1 \
 persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
+persist.vendor.radio.add_power_save=1 \
 ril.subscription.types=NV,RUIM \
 rild.libargs=-d/dev/smd0 \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
@@ -220,3 +221,9 @@ ro.vendor.qti.sys.fw.bservice_enable=true \
 ro.vendor.qti.sys.fw.bservice_limit=5 \
 ro.vendor.qti.sys.fw.bservice_age=5000
 
+# Dex2oat threads for faster app installation
+# Use all 8 Cores/Threads of our CPU
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-threads=8 \
+dalvik.vm.image-dex2oat-threads=8 \
+debug.generate-debug-info=false
