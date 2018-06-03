@@ -29,6 +29,7 @@ TARGET_VENDOR := Xiaomi
 PRODUCT_DEVICE := vince
 PRODUCT_NAME := dot_vince
 PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
 BOARD_VENDOR := Xiaomi
 
@@ -39,6 +40,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "xiaomi/vince/vince:8.1.0/OPM1.171019.019/8.5.9:user/release-keys"
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.model
