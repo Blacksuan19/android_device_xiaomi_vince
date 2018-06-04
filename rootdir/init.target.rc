@@ -28,7 +28,6 @@
 #
 
 on early-init
-    write /proc/sys/kernel/sched_boost 1
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
@@ -47,12 +46,6 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
 on init
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 1
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on post-fs-data
@@ -177,18 +170,12 @@ service energy-awareness /system/vendor/bin/energy-awareness
     group system
     oneshot
 
-#service hvdcp_opti /system/vendor/bin/hvdcp_opti
-#    class main
-#    user root
-#    group system wakelock
-
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-#    start hvdcp_opti
     start thermal-engine
 
 on boot
