@@ -23,5 +23,8 @@
 
     <!-- Enable doze mode-->
     <bool name="doze_display_state_supported">true</bool>
+    <!-- Rounded display corners-->
+    <dimen name="rounded_corner_radius">8dp</dimen>
+
 </resources>
 
