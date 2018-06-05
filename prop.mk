@@ -2,6 +2,11 @@
 # system.prop for vince
 #
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.dex2oat-filter=speed \
+dalvik.vm.image-dex2oat-filter=speed
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.audio.calfile0=/vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
@@ -78,20 +83,15 @@ persist.debug.coresight.config=stm-events
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.sf.enable_hwc_vds=1 \
-debug.sf.hw=0 \
 debug.sf.latch_unsignaled=1 \
-debug.egl.hw=0 \
 persist.hwc.mdpcomp.enable=true \
 sdm.debug.disable_skip_validate=1 \
+sdm.perf_hint_window=50 \
 debug.gralloc.enable_fb_ubwc=1 \
 debug.mdpcomp.logs=0 \
-debug.sf.hw=0 \
-dev.pm.dyn_samplingrate=1 \
 persist.debug.wfd.enable=1 \
-persist.demo.hdmirotationlock=false \
 debug.enable.sglscale=1 \
 persist.hwc.enable_vds=1 \
-persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 ro.sf.lcd_density=440
@@ -202,6 +202,11 @@ persist.timed.enable=true
 # Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
+
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
+PRODUCT_PROPERTY_OVERRIDES += \
+vidc.debug.level=0
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
