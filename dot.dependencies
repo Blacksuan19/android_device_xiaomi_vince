@@ -10,9 +10,5 @@
  {
    "repository": "vendor_xiaomi_vince",
    "target_path": "vendor/xiaomi"
- },
- {
-   "repository": "dragontc-7.0",
-   "target_path": "prebuilts/clang/host/linux-x86/dragontc-7.0"
  }
 ]
