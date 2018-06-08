@@ -3,12 +3,12 @@
     "remote":      "github",
     "repository":  "mdeejay/kernel_xiaomi_vince",
     "target_path": "kernel/xiaomi/vince",
-    "branch":      "android-8.1-clang"
+    "branch":      "potato-o"
   },
   {
     "remote":      "github",
     "repository":  "mdeejay/vendor_xiaomi_vince",
     "target_path": "vendor/xiaomi"
-    "branch":      "android-8.1"
-  },
+    "branch":      "potato-o"
+  }
 ]
