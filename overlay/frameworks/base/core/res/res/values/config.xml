@@ -375,7 +375,6 @@
    <!-- Should the pinner service pin the Camera application? -->
    <bool name="config_pinnerCameraApp">true</bool>
 
-   <!-- enable support for configure max aspect ratio per app -->
-  <!-- <bool name="config_haveHigherAspectRatioScreen">true</bool> -->
+
 
 </resources>
