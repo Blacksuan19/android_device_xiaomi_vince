@@ -21,9 +21,10 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Enable doze mode-->
-    <bool name="doze_display_state_supported">true</bool>
-
+	<!-- more realistic padding -->
+    <dimen name="rounded_corner_content_padding">12dp</dimen>
+    <!-- Rounded display corners-->
+    <dimen name="rounded_corner_radius">25dp</dimen>
 
 </resources>
 
