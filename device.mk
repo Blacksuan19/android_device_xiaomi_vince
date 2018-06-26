@@ -265,11 +265,6 @@ PRODUCT_PACKAGES += \
 # LiveDisplay native
  PRODUCT_PACKAGES += \
      vendor.lineage.livedisplay@1.0-service-sdm
-     
-# Spectrum
-PRODUCT_PACKAGES += \
-    init.spectrum.rc \
-    init.spectrum.sh
 
 # Media
 PRODUCT_COPY_FILES += \
