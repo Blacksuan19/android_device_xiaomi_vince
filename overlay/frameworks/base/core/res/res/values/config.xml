@@ -378,4 +378,7 @@
    <!-- enable support for configure max aspect ratio per app -->
   <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
+  <!-- Whether the device supports Smart Pixels -->
+  <bool name="config_enableSmartPixels">true</bool>
+
 </resources>
