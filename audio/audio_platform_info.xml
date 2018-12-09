@@ -96,4 +96,3 @@
         <device name="SND_DEVICE_IN_FRONT_MIC" acdb_id="11"/>
     </acdb_ids>
 </audio_platform_info>
-

@@ -1,4 +1,0 @@
-allow system_server qti_debugfs:file r_file_perms;
-allow system_server unlabeled:file unlink;
-allow system_server ir_device:chr_file rw_file_perms;
-allow system_server wcnss_filter:unix_stream_socket connectto;

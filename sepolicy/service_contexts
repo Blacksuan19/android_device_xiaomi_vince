@@ -1,9 +1,0 @@
-com.goodix.FingerprintService                  u:object_r:goodix_fingerprint_service:s0
-android.hardware.fingerprint.IGoodixFingerprintDaemon u:object_r:goodixfingerprintd_service:s0
-com.fingerprints.extension::IFingerprintAuthenticator           u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintEngineering           u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintSensorTest            u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintNavigation            u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintCalibration           u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintRecalibration           u:object_r:hal_fingerprint_service:s0
-com.fingerprints.extension::IFingerprintSenseTouch            u:object_r:hal_fingerprint_service:s0

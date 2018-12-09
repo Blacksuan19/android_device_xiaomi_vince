@@ -79,7 +79,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <vndk>
-        <version>0.0.0</version>
-    </vndk>
 </compatibility-matrix>

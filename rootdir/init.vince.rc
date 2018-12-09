@@ -54,3 +54,6 @@ service goodix_script /vendor/bin/init.goodix.sh
     user system
     oneshot
 
+on post-fs-data
+    chown system system /dev/peel_ir
+    chmod 0666 /dev/peel_ir

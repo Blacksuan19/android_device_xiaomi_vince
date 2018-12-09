@@ -1,3 +1,0 @@
-get_prop(time_daemon, debug_prop);
-allow time_daemon time_data_file:lnk_file { read };
-allow time_daemon system_data_file:lnk_file { read };
