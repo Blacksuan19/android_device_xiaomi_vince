@@ -103,6 +103,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # enable ui/render thread sched FIFO
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.use_fifo_ui=1
+	
+#property to enable user to access Google WFD settings
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.debug.wfd.enable=1
+#property to enable VDS WFD solution
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.hwc.enable_vds=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -235,7 +242,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config.extra=none
+    persist.vendor.usb.config.extra=none
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
