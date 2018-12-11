@@ -100,6 +100,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.gralloc.enable_fb_ubwc=1 \
 	vendor.display.disable_skip_validate=1
 	
+# Always use GPU for screen compositing
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.disable_hwc=1
+	
 # enable ui/render thread sched FIFO
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.use_fifo_ui=1
