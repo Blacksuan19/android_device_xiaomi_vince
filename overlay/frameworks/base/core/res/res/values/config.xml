@@ -367,9 +367,6 @@
         <item>"/system/framework/boot-core-libart.vdex"</item>
     </string-array>
 
-    <!-- Should the pinner service pin the Camera application? -->
-    <bool name="config_pinnerCameraApp">true</bool>
-
     <!-- Default value for led color when battery is low on charge -->
     <integer name="config_notificationsBatteryLowARGB">0xFFFFFFFF</integer>
 
