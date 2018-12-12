@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
-$(call inherit-product, vendor/havoc/config/phone-xxhdpi-2048-dalvik-heap.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/havoc/config/common.mk)
@@ -40,5 +39,7 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="vince" \
-	TARGET_DEVICE="vince"
+    PRIVATE_BUILD_DESC="vince-user 8.1.0 OPM1.171019.019 V10.0.4.0.OEGMIFH release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := "xiaomi/vince/vince:8.1.0/OPM1.171019.019/V10.0.4.0.OEGMIFH:user/release-keys"
