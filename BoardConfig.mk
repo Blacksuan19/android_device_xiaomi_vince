@@ -40,8 +40,8 @@ TARGET_USES_64_BIT_BINDER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 loop.max_part=7 firmware_class.path=/vendor/firmware_mnt/image
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm64
@@ -52,7 +52,6 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
-TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_AUDIOSPHERE := true
@@ -119,7 +118,6 @@ endif
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 
 # Display
-TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
@@ -168,25 +166,20 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
-# HWUI
-HWUI_COMPILE_FOR_PERF := true
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8953
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953
+
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += \
+    $(DEVICE_PATH)/lineagehw
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
-TARGET_QCOM_MEDIA_VARIANT := caf-msm8996
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# Namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom/audio-$(TARGET_QCOM_AUDIO_VARIANT) \
-    hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT) \
-    hardware/qcom/media-$(TARGET_QCOM_MEDIA_VARIANT)
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -207,7 +200,6 @@ TARGET_USES_MKE2FS := true
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_POWER_HAL := true
 TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input2/wake_gesture"
@@ -224,7 +216,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/minimal
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-12-05

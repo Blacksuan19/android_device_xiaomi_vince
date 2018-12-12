@@ -1,0 +1,22 @@
+[
+ {
+   "repository": "android_kernel_xiaomi_msm8953",
+   "target_path": "kernel/xiaomi/msm8953"
+ },
+ {
+   "repository": "android_packages_resources_devicesettings",
+   "target_path": "packages/resources/devicesettings"
+ },
+ {
+   "repository": "vendor_xiaomi",
+   "target_path": "vendor/xiaomi"
+ },
+   {
+   "repository": "android_hardware_qcom_fm",
+   "target_path": "hardware/qcom/fm"
+ },
+ {
+   "repository": "android_packages_apps_FMRadio",
+   "target_path": "packages/apps/FMRadio"
+ }
+]
