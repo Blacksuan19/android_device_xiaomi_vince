@@ -2,6 +2,11 @@
 # system.prop for vince
 #
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.image-dex2oat-filter=speed
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
 	af.fast_track_multiplier=2 \
@@ -166,7 +171,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.dex2oat_thread_count=4 \
+    ro.sys.fw.dex2oat_thread_count=8 \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Netmgrd
