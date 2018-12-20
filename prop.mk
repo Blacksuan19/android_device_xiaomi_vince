@@ -86,7 +86,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-	debug.sf.enable_hwc_vds=1 \
 	debug.egl.hw=0 \
 	debug.enable.sglscale=1 \
 	debug.gralloc.enable_fb_ubwc=1 \
@@ -102,8 +101,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.display.cabl=2 \
 	sdm.debug.disable_skip_validate=1 \
 	vendor.display.disable_skip_validate=1 \
-	vendor.display.enable_default_color_mode=1 \
-	vendor.gralloc.enable_fb_ubwc=1	
+	vendor.display.enable_default_color_mode=1
+	
+# WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.enable_hwc_vds=1 \
+	vendor.gralloc.enable_fb_ubwc=1 \
+	vendor.gralloc.disable_wb_ubwc=1
 	
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -186,10 +190,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_1="" \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3=""
-
-# Property to enable display default color mode
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.enable_default_color_mode=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
