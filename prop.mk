@@ -40,6 +40,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.voice.playback.conc.disabled=true \
 	vendor.voice.record.conc.disabled=false \
 	vendor.voice.voip.conc.disabled=true
+	
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.hw.binder.size_kbyte=1024
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
