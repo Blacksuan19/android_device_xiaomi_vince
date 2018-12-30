@@ -1498,12 +1498,6 @@ case "$target" in
                 echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/sampling_down_factor
                 echo 883200 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
                 echo 60000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis
-
-                if [ $panel -gt 1080 ]; then
-                    #set texture cache size for resolution greater than 1080p
-                    setprop ro.hwui.texture_cache_size 72
-                fi
-
                 echo 59000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
                 echo 1305600 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
                 echo "1 691200:80" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads

@@ -534,4 +534,14 @@
 	
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
+	
+	<!-- Used to decide if the user can change the colors -->
+	<bool name="config_multiColorBatteryLed">false</bool>
+
+	<!-- Whether the device supports Smart Pixels
+       Disable if it doesn't -->
+	<bool name="config_enableSmartPixels">false</bool>
+
+	<!-- Whether the device has outdated qti-telephony-common.jar -->
+	<bool name="config_oldQtiTelephony">false</bool>
 </resources>
