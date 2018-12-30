@@ -532,16 +532,31 @@
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 	
+    <!-- Set to true if the wifi display supports compositing content stored
+         in gralloc protected buffers.  For this to be true, there must exist
+         a protected hardware path for surface flinger to composite and send
+         protected buffers to the wifi display video encoder.
+         If this flag is false, we advise applications not to use protected
+         buffers (if possible) when presenting content to a wifi display because
+         the content may be blanked.
+         This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
+         flag is set for wifi displays.
+    -->
+    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
+	
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 	
 	<!-- Used to decide if the user can change the colors -->
 	<bool name="config_multiColorBatteryLed">false</bool>
 
-	<!-- Whether the device supports Smart Pixels
-       Disable if it doesn't -->
-	<bool name="config_enableSmartPixels">false</bool>
+     <!-- Does the notification LED support multiple colors?
+	   Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">false</bool>
 
 	<!-- Whether the device has outdated qti-telephony-common.jar -->
 	<bool name="config_oldQtiTelephony">false</bool>
+	
+    <!-- Component name for default assistant on this device -->
+    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
 </resources>

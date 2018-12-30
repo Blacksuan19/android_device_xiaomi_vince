@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bliss_vince.mk
+    $(LOCAL_DIR)/syberia_vince.mk
