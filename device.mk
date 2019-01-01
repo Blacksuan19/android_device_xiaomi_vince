@@ -188,8 +188,8 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # FM
 PRODUCT_PACKAGES += \
