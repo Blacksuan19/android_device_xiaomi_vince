@@ -1,1 +1,1 @@
-add_lunch_combo syberia_vince-userdebug
+add_lunch_combo havoc_vince-userdebug
