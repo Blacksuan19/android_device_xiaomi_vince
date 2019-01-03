@@ -35,6 +35,10 @@ PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 BOARD_VENDOR := Xiaomi
 
+#device maintainer 
+PRODUCT_PROPERTY_OVERRIDES += \
+ 	ro.havoc.maintainer=Blacksuan19
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
