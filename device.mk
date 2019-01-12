@@ -187,10 +187,6 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
-# Doze mode
-#PRODUCT_PACKAGES += \
-#    XiaomiDoze
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
