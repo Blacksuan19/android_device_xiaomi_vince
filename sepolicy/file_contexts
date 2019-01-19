@@ -52,3 +52,9 @@
 /vendor/usr/keylayout/uinput-fpc\.kl                      u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/uinput-goodix\.kl                   u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/msm8953-snd-card-mtp_Button_Jack\.kl     u:object_r:vendor_keylayout_file:s0
+
+# XiaomiParts
+/sys/devices/soc/qpnp-flash-led-24/leds/led:torch_0/max_brightness      u:object_r:sysfs_torch:s0
+/sys/devices/soc/qpnp-flash-led-24/leds/led:torch_1/max_brightness      u:object_r:sysfs_torch:s0
+/sys/devices/platform/kcal_ctrl.0(/.*)?                                 u:object_r:sysfs_kcal:s0
+

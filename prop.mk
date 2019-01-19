@@ -86,6 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	debug.egl.hw=0 \
 	debug.enable.sglscale=1 \
+    debug.sf.latch_unsignaled=1 \
 	debug.gralloc.enable_fb_ubwc=1 \
 	debug.mdpcomp.logs=0 \
 	debug.sf.enable_hwc_vds=1 \
@@ -177,7 +178,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.perf.iop_v3.enable=1 \
 	ro.vendor.at_library=libqti-at.so \
 	persist.vendor.qti.games.gt.prof=1
-
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=true \

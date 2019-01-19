@@ -312,7 +312,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
