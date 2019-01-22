@@ -30,6 +30,6 @@ type sysfs_tap_to_wake, sysfs_type, fs_type;
 # Keylayout
 type vendor_keylayout_file, file_type, vendor_file_type;
 
-# XiaomiParts
+# AdvancedControls
 type sysfs_kcal, fs_type, sysfs_type;
 type sysfs_torch, fs_type, sysfs_type;
