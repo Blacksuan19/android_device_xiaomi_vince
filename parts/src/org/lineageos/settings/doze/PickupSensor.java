@@ -46,11 +46,7 @@ public class PickupSensor implements SensorEventListener {
     public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/TiltSensor.java
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
-=======
-        mSensor = DozeUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
->>>>>>> 80b3bdc... vince: Convert XiaomiDoze into XiaomiParts:parts/src/org/lineageos/settings/doze/PickupSensor.java
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 

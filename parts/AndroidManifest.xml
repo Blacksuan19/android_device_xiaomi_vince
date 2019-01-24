@@ -46,11 +46,6 @@
         </service>
 
         <activity
-<<<<<<< HEAD:doze/AndroidManifest.xml
-            android:name=".DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
-            android:theme="@style/Theme.Main">
-=======
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
@@ -58,7 +53,6 @@
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
->>>>>>> 80b3bdc... vince: Convert XiaomiDoze into XiaomiParts:parts/AndroidManifest.xml
         </activity>
 
     </application>
