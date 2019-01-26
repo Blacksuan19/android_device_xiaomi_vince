@@ -21,23 +21,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
-$(call inherit-product, vendor/havoc/config/common.mk)
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Boot Animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Device identifier
 PRODUCT_DEVICE := vince
-PRODUCT_NAME := havoc_vince
+PRODUCT_NAME := dot_vince
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 BOARD_VENDOR := Xiaomi
-
-#device maintainer 
-PRODUCT_PROPERTY_OVERRIDES += \
- 	ro.havoc.maintainer=Blacksuan19
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
