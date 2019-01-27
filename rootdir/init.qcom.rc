@@ -407,9 +407,17 @@ on property:sys.boot_completed=1
     #Reset read ahead for dm-0 and dm-1 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
+	#Test Fix display wakeup
+	chown system system /sys/devices/soc/qpnp-smbcharger-18/power_supply/battery/subsystem/bms/hi_power
+    chmod 0664 /sys/devices/soc/qpnp-smbcharger-18/power_supply/battery/subsystem/bms/hi_power
+    write /sys/devices/soc/qpnp-smbcharger-18/power_supply/battery/subsystem/bms/hi_power 1
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
+
+# Enable ZRAM on boot_complete
+    swapon_all /system/vendor/etc/fstab.qcom
+    write /proc/sys/vm/swappiness 100
 
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
@@ -657,7 +665,6 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     oneshot
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
-
+	
 on property:dev.bootcomplete=1
-    swapon_all /vendor/etc/fstab.qcom
     setprop sys.io.scheduler "bfq"
