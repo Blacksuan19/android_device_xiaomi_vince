@@ -228,7 +228,7 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2018-12-05
+VENDOR_SECURITY_PATCH := 2019-02-05
 
 # Treble
 PRODUCT_VENDOR_MOVE_ENABLED := true
