@@ -201,9 +201,9 @@ TARGET_USES_MKE2FS := true
 TARGET_PER_MGR_ENABLED := true
 
 # Power
+
 TARGET_QCOM_POWER_VARIANT := caf
-TARGET_HAS_NO_WLAN_STATS := true
-TARGET_USES_INTERACTION_BOOST := true
+TARGET_HAS_NO_WIFI_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture"
 
 # Doze mode
