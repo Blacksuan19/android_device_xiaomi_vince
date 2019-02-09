@@ -73,10 +73,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.adb.secure=0 
 
-# Cne/Dpm
+# Cne
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1 \
-    persist.dpm.feature=1
+    persist.cne.feature=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
