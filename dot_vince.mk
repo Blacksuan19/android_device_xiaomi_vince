@@ -25,6 +25,7 @@ $(call inherit-product, vendor/dot/config/common.mk)
 
 # Boot Animation
 TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device identifier
 PRODUCT_DEVICE := vince
