@@ -152,6 +152,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
 
+# Dex	
+PRODUCT_DEXPREOPT_SPEED_APPS += \	
+    SystemUI
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
