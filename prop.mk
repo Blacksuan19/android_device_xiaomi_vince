@@ -90,6 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.enable_hwc_vds=1 \
 	debug.sf.hw=0 \
 	debug.sf.recomputecrop=0 \
+    debug.sf.latch_unsignaled=1 \
 	dev.pm.dyn_samplingrate=1 \
 	persist.debug.wfd.enable=1 \
 	persist.demo.hdmirotationlock=false \
