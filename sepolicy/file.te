@@ -28,7 +28,8 @@ type sysfs_msm_subsys, sysfs_type, fs_type;
 type sysfs_tap_to_wake, sysfs_type, fs_type;
 
 # Keylayout
-type vendor_keylayout_file, file_type, vendor_file_type;
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
 
 # XiaomiParts
 type sysfs_kcal, fs_type, sysfs_type;
