@@ -75,7 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Cne
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1
+    persist.vendor.cne.feature=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -167,7 +167,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.dex2oat_thread_count=8 \
     ro.vendor.extension_library=libqti-perfd-client.so
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -190,20 +189,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
-    persist.data.iwlan.enable=true \
-    persist.dbg.ims_volte_enable=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=0 \
+    persist.dbg.wfc_avail_ovr=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.radio.calls.on.ims=0 \
-    persist.radio.csvt.enabled=false \
-    persist.radio.hw_mbn_update=0 \
-    persist.radio.jbims=0 \
-    persist.radio.mt_sms_ack=20 \
     persist.radio.multisim.config=dsds \
     persist.radio.sw_mbn_update=0 \
-    persist.radio.videopause.mode=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
@@ -214,7 +205,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=20,20 \
     service.qti.ims.enabled=1 \
     telephony.lteOnCdmaDevice=1 \
-	persist.radio.aosp_usr_pref_sel=true
+	persist.radio.aosp_usr_pref_sel=true \
+	persist.vendor.radio.prefer_spn=1 \
+	persist.vendor.qti.pie.telephony=1
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
