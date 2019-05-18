@@ -18,7 +18,7 @@
 set -e
 
 # Required!
-export DEVICE=tissot
+export DEVICE=vince
 export DEVICE_COMMON=msm8953-common
 export VENDOR=xiaomi
 
