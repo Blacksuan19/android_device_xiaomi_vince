@@ -1,1 +1,1 @@
-add_lunch_combo lineage_vince-eng
+add_lunch_combo aosp_vince-userdebug
