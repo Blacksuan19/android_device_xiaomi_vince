@@ -21,17 +21,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
-# Inherit some common AEX stuff.
-$(call inherit-product, vendor/dot/config/common.mk)
+# Inherit some common havoc stuff.
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
-PRODUCT_NAME := dot_vince
+PRODUCT_NAME := havoc_vince
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
+
+# device maintainer 
+PRODUCT_PROPERTY_OVERRIDES += \
+ 	ro.havoc.maintainer=Blacksuan19
+
+# official tag
+export export HAVOC_BUILD_TYPE=Official
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_vince.mk
+    $(LOCAL_DIR)/havoc_vince.mk
