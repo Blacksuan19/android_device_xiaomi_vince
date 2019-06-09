@@ -1,14 +1,14 @@
 [
  {
-   "repository": "kernel_xiaomi_msm8953",
+   "repository": "android_kernel_xiaomi_vince",
    "target_path": "kernel/xiaomi/msm8953"
  },
  {
-   "repository": "vendor_xiaomi_vince",
+   "repository": "proprietary_vendor_xiaomi_vince",
    "target_path": "vendor/xiaomi"
- },
+ },z
  {
-   "repository": "device_xiaomi_msm8953-common",
+   "repository": "device_xiaomi_msm8953-common-vince",
    "target_path": "device/xiaomi/msm8953-common"
  }
 ]
