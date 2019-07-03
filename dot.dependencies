@@ -6,7 +6,7 @@
  {
    "repository": "proprietary_vendor_xiaomi_vince",
    "target_path": "vendor/xiaomi"
- },z
+ },
  {
    "repository": "device_xiaomi_msm8953-common-vince",
    "target_path": "device/xiaomi/msm8953-common"
