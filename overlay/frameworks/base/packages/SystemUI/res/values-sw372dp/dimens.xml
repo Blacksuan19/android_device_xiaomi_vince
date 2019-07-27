@@ -17,5 +17,5 @@
 -->
 <resources>
 	<!-- more realistic padding -->
-    <dimen name="rounded_corner_content_padding">12dp</dimen>
+    <dimen name="rounded_corner_content_padding">16dp</dimen>
 </resources>
