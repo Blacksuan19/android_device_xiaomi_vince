@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_vince.mk
+    $(LOCAL_DIR)/nitrogen_vince.mk
 
 COMMON_LUNCH_CHOICES := \
     nitrogen_vince-user \
