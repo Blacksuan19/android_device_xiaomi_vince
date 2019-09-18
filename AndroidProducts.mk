@@ -17,6 +17,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_vince-user \
-    lineage_vince-userdebug \
-    lineage_vince-eng
+    nitrogen_vince-user \
+    nitrogen_vince-userdebug \
+    nitrogen_vince-eng
