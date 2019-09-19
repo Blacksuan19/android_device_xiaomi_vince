@@ -24,6 +24,12 @@ $(call inherit-product, vendor/nitrogen/config/phone-xxhdpi-2048-hwui-memory.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    device/xiaomi/vince \
+    device/xiaomi/msm8953-common
+
 # Inherit from msm8953-common
 $(call inherit-product, device/xiaomi/msm8953-common/msm8953.mk)
 
