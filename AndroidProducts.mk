@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nitrogen_vince.mk
+    $(LOCAL_DIR)/havoc_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    nitrogen_vince-user \
-    nitrogen_vince-userdebug \
-    nitrogen_vince-eng
+    havoc_vince-user \
+    havoc_vince-userdebug \
+    havoc_vince-eng
