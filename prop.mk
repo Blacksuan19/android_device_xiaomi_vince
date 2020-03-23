@@ -11,5 +11,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.dual.camera=0 \
     persist.camera.CDS=off
 
-# maintainer
-ro.havoc.maintainer=Blacksuan19
